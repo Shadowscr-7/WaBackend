@@ -9,9 +9,13 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const corsOptions = {
+  origin: ['https://wa-83gqc3oqf-julios-projects-8fa9bc10.vercel.app/'],
+  optionsSuccessStatus: 200,
+};
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
